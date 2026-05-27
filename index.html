@@ -184,7 +184,7 @@
   .result-label { font-size:13px; font-weight:600; color:var(--teal-dark); text-transform:uppercase; letter-spacing:.06em; margin-bottom:8px; }
   .result-price { font-family:'Cormorant Garamond',serif; font-size:56px; font-weight:700; color:var(--dark); line-height:1; margin-bottom:12px; }
   .result-price span { font-size:32px; color:var(--teal); font-weight: 500; }
-  .result-note { font-size:14px; color:var(--mid); }
+  .result-note { font-size:14px; color:var(--mid); line-height: 1.5;}
   .result-breakdown { margin-top:24px; border-top:1px solid var(--border); padding-top:24px; }
   .rb-row { display:flex; justify-content:space-between; align-items:center; padding:8px 0; font-size:15px; }
   .rb-row.total { font-weight:700; font-size:18px; color:var(--dark); border-top:2px solid var(--border); padding-top:16px; margin-top:8px; }
@@ -463,32 +463,32 @@
       <div class="service-card">
         <div class="sc-icon"><i class="fa-solid fa-couch"></i></div>
         <div class="sc-name">Couch Cleaning</div>
-        <div class="sc-desc">Deep extraction cleaning for fabric and leather sofas. 1-seater, 2-seater, 3-seater and L-shapes. We remove stains, odours and allergens.</div>
-        <span class="sc-price">From R200 per seat</span>
+        <div class="sc-desc">Deep extraction cleaning for fabric and leather sofas. 1-seater up to 8-seaters. We remove stains, odours and allergens.</div>
+        <span class="sc-price">From R250</span>
       </div>
       <div class="service-card">
         <div class="sc-icon"><i class="fa-solid fa-chair"></i></div>
-        <div class="sc-name">Chair Cleaning</div>
-        <div class="sc-desc">Dining chairs, office chairs, accent chairs — fully cleaned and refreshed. Perfect for sets of chairs that see daily use.</div>
-        <span class="sc-price">From R100 per chair</span>
+        <div class="sc-name">Chairs & Ottomans</div>
+        <div class="sc-desc">Dining chairs, office chairs, and ottomans of all sizes. Perfectly cleaned and refreshed.</div>
+        <span class="sc-price">From R150</span>
       </div>
       <div class="service-card">
         <div class="sc-icon"><i class="fa-solid fa-rug"></i></div>
-        <div class="sc-name">Carpet Cleaning</div>
-        <div class="sc-desc">Hot-water extraction and dry cleaning for all carpet types. Small, medium and large. Pickup & delivery available.</div>
-        <span class="sc-price">From R150 per carpet</span>
+        <div class="sc-name">Fitted Carpet Cleaning</div>
+        <div class="sc-desc">Hot-water extraction and dry cleaning for fitted carpets from 3x3 to 6x6. Office carpets also available.</div>
+        <span class="sc-price">From R550</span>
       </div>
       <div class="service-card">
         <div class="sc-icon"><i class="fa-solid fa-rug"></i></div>
         <div class="sc-name">Rug Cleaning</div>
-        <div class="sc-desc">Specialist rug cleaning using the correct method for your rug type — Persian, shaggy, woven or synthetic. Pickup & delivery available.</div>
-        <span class="sc-price">From R150 per rug</span>
+        <div class="sc-desc">Specialist rug cleaning using the correct method for your rug type. Free collection on Wednesdays, delivery on Fridays.</div>
+        <span class="sc-price">From R350</span>
       </div>
       <div class="service-card">
         <div class="sc-icon"><i class="fa-solid fa-bed"></i></div>
         <div class="sc-name">Mattress Cleaning</div>
         <div class="sc-desc">Deep sanitising and deodorising for single, double, queen and king mattresses. Removes dust mites, sweat stains and allergens.</div>
-        <span class="sc-price">From R250 per mattress</span>
+        <span class="sc-price">From R380</span>
       </div>
       <div class="service-card">
         <div class="sc-icon"><i class="fa-solid fa-spray-can"></i></div>
@@ -499,14 +499,14 @@
       <div class="service-card">
         <div class="sc-icon"><i class="fa-solid fa-house"></i></div>
         <div class="sc-name">House Cleaning</div>
-        <div class="sc-desc">Full house cleans from 1 to 4+ bedrooms. Standard or deep cleaning. Once-off, weekly or monthly contracts available.</div>
-        <span class="sc-price">From R400</span>
+        <div class="sc-desc">Monthly cleaning packages available. Add-ons include kitchen, bathrooms, showers, mopping and dusting.</div>
+        <span class="sc-price">Packages from R1,500</span>
       </div>
       <div class="service-card">
         <div class="sc-icon"><i class="fa-solid fa-building"></i></div>
         <div class="sc-name">Apartment / Townhouse</div>
         <div class="sc-desc">Tailored cleaning packages for smaller living spaces. Regular maintenance or once-off refresh — your choice.</div>
-        <span class="sc-price">From R350</span>
+        <span class="sc-price">From R1,200</span>
       </div>
       <div class="service-card">
         <div class="sc-icon"><i class="fa-solid fa-briefcase"></i></div>
@@ -541,8 +541,8 @@
       <div class="service-card">
         <div class="sc-icon"><i class="fa-solid fa-shoe-prints"></i></div>
         <div class="sc-name">Shoe Washing</div>
-        <div class="sc-desc">Professional sneaker and shoe cleaning. Deep clean, brush work and deodorising. Collected and delivered or walk-in.</div>
-        <span class="sc-price">From R50 per pair</span>
+        <div class="sc-desc">Standard, White Restoration, Suede & Nubuck, and Midsole De-Yellowing. Free lace cleaning included!</div>
+        <span class="sc-price">From R130 per pair</span>
       </div>
     </div>
   </div>
@@ -576,8 +576,8 @@
           <div class="calc-title">Which service do you need?</div>
           <div class="options-grid" style="grid-template-columns:repeat(auto-fill,minmax(160px,1fr))">
             <button class="opt-btn" onclick="selectService('couch','Couch Cleaning')"><i class="fa-solid fa-couch"></i> Couch Cleaning</button>
-            <button class="opt-btn" onclick="selectService('chair','Chair Cleaning')"><i class="fa-solid fa-chair"></i> Chair Cleaning</button>
-            <button class="opt-btn" onclick="selectService('carpet','Carpet Cleaning')"><i class="fa-solid fa-rug"></i> Carpet Cleaning</button>
+            <button class="opt-btn" onclick="selectService('chair','Chairs & Ottomans')"><i class="fa-solid fa-chair"></i> Chairs & Ottomans</button>
+            <button class="opt-btn" onclick="selectService('carpet','Fitted Carpet')"><i class="fa-solid fa-rug"></i> Fitted Carpet</button>
             <button class="opt-btn" onclick="selectService('rug','Rug Cleaning')"><i class="fa-solid fa-rug"></i> Rug Cleaning</button>
             <button class="opt-btn" onclick="selectService('mattress','Mattress Cleaning')"><i class="fa-solid fa-bed"></i> Mattress Cleaning</button>
             <button class="opt-btn" onclick="selectService('window','Window Cleaning')"><i class="fa-solid fa-spray-can"></i> Window Cleaning</button>
@@ -585,7 +585,7 @@
             <button class="opt-btn" onclick="selectService('apartment','Apartment / Townhouse')"><i class="fa-solid fa-building"></i> Apartment / Townhouse</button>
             <button class="opt-btn" onclick="selectService('office','Office Cleaning')"><i class="fa-solid fa-briefcase"></i> Office Cleaning</button>
             <button class="opt-btn" onclick="selectService('car','Car Interior')"><i class="fa-solid fa-car"></i> Car Interior</button>
-            <button class="opt-btn" onclick="selectService('shoes','Shoe Washing')"><i class="fa-solid fa-shoe-prints"></i> Shoe Washing</button>
+            <button class="opt-btn" onclick="selectService('shoes','Sneaker / Shoe Wash')"><i class="fa-solid fa-shoe-prints"></i> Shoe Washing</button>
             <button class="opt-btn" onclick="selectService('movein','Move-In / Move-Out')"><i class="fa-solid fa-door-open"></i> Move-In / Move-Out</button>
             <button class="opt-btn" onclick="selectService('postconstruction','Post-Construction')"><i class="fa-solid fa-hammer"></i> Post-Construction</button>
             <button class="opt-btn" onclick="selectService('postoccupational','Post-Occupational')"><i class="fa-solid fa-box-open"></i> Post-Occupational</button>
@@ -641,7 +641,7 @@
           <div class="calc-result">
             <div class="result-label">Estimated Total</div>
             <div class="result-price"><span>R</span><span id="totalPrice">0</span></div>
-            <div class="result-note">This is an estimate based on the details you've provided. Final pricing confirmed on-site.</div>
+            <div class="result-note">This is an estimate based on the details you've provided. Final pricing confirmed on-site.<br><br><strong style="color:var(--teal);">A 50% deposit is required to secure your booking.</strong></div>
             <div class="result-breakdown">
               <div id="breakdownRows"></div>
             </div>
@@ -663,7 +663,7 @@
       <div class="booking-left">
         <div class="section-label">Book a Cleaning</div>
         <h2 class="section-title">Ready to Book?<br>We've Made It Simple</h2>
-        <p class="section-sub">Fill in the form and we'll confirm your booking within a few hours. No calls needed — unless you want to chat first.</p>
+        <p class="section-sub">Fill in the form and we'll confirm your booking within a few hours.<br><strong style="color:var(--teal);">Please note: A 50% deposit is required to secure your booking.</strong></p>
         <div class="booking-features">
           <div class="bf-item">
             <div class="bf-item-icon"><i class="fa-solid fa-camera"></i></div>
@@ -710,8 +710,8 @@
             <select id="bService">
               <option value="">Select a service...</option>
               <option>Couch Cleaning</option>
-              <option>Chair Cleaning</option>
-              <option>Carpet Cleaning</option>
+              <option>Chair & Ottoman Cleaning</option>
+              <option>Fitted Carpet Cleaning</option>
               <option>Rug Cleaning</option>
               <option>Mattress Cleaning</option>
               <option>Window Cleaning</option>
@@ -1092,30 +1092,32 @@ let calcState = {
   basePrice: 0
 };
 
+// --- PRICING UPDATED HERE ---
 const PRICING = {
-  couch:    { '1-seater':200, '2-seater':300, '3-seater':400, 'L-shape':600 },
-  chair:    { single: 100 },
-  carpet:   { Small:150, Medium:250, Large:350 },
-  rug:      { Small:150, Medium:250, Large:350 },
-  mattress: { Single:250, Double:350, Queen:450, King:550 },
+  couch:    { '1-seater':250, '2-seater':450, '3-seater':550, '4-seater':750, '5-seater':850, '6-seater':950, '7-seater':1050, '8-seater':1250 },
+  chair:    { 'Chair': 150, 'Small Ottoman': 150, 'Large Ottoman': 200, 'XL Ottoman': 300 },
+  carpet:   { 'Small 3x3':550, 'Medium 4x4':650, 'Large 5x5':750, 'Extra-Large 6x6':850 },
+  rug:      { 'Small':350, 'Medium':450, 'Large':550, 'Extra-Large':650 },
+  mattress: { 'Single':380, 'Double':580, 'Queen':580, 'King':680 },
   window:   { perWindow: 50 },
-  house:    { 1:400, 2:600, 3:800, 4:1000 },
-  apartment:{ 1:350, 2:500, 3:700 },
+  house:    { 1:1500, 2:1800, 3:2100, 4:2500 },
+  apartment:{ 1:1200, 2:1500, 3:1800 },
   office:   { base: 800 },
   car:      { Sedan:400, SUV:550, Bakkie:500 },
-  shoes:    { perPair:50 },
+  shoes:    { 'Standard':130, 'White Restoration':150, 'Suede & Nubuck':180, 'Midsole De-Yellowing':250 },
   movein:   { base:600 },
   postconstruction: { base: 0 },
   postoccupational: { base:700 }
 };
 
+// --- ADDONS UPDATED HERE ---
 const ADDONS = {
   couch: ['Leather conditioning +R80','Fabric protector +R100','Odour treatment +R60'],
-  carpet: ['Pickup & delivery +R100','Stain protector +R80'],
-  rug: ['Pickup & delivery +R100','Stain protector +R80'],
+  carpet: ['Stain protector +R80', 'Odour treatment +R60'],
+  rug: ['Stain protector +R80', 'Odour treatment +R60'],
   mattress: ['Odour treatment +R50','Allergy treatment +R80'],
-  house: ['Oven cleaning +R150','Fridge deep clean +R100','Window cleaning +R200','Laundry +R120'],
-  apartment: ['Oven cleaning +R150','Fridge deep clean +R100','Window cleaning +R150'],
+  house: ['Kitchen cleaning +R450', 'Bathroom sanitising +R350', 'Shower deep clean +R650', 'Dusting +R250', 'Vacuuming +R250', 'Floor mopping +R350', 'Window cleaning +R200', 'Laundry +R120'],
+  apartment: ['Kitchen cleaning +R450', 'Bathroom sanitising +R350', 'Shower deep clean +R650', 'Dusting +R250', 'Vacuuming +R250', 'Floor mopping +R350', 'Window cleaning +R150'],
   office: ['Window cleaning +R200','Bathroom deep clean +R150','Kitchen/breakroom +R120'],
   car: ['Engine bay +R150','Odour bomb +R80','Fabric protector +R100'],
   default: []
@@ -1141,10 +1143,14 @@ function buildStep2() {
   if(s === 'couch') {
     html = `<div class="calc-label">What type of couch?</div>
     <div class="options-grid">
-      <button class="opt-btn" onclick="selectSize('1-seater',this)">1-Seater<br><small>R200</small></button>
-      <button class="opt-btn" onclick="selectSize('2-seater',this)">2-Seater<br><small>R300</small></button>
-      <button class="opt-btn" onclick="selectSize('3-seater',this)">3-Seater<br><small>R400</small></button>
-      <button class="opt-btn" onclick="selectSize('L-shape',this)">L-Shape<br><small>R600</small></button>
+      <button class="opt-btn" onclick="selectSize('1-seater',this)">1-Seater<br><small>R250</small></button>
+      <button class="opt-btn" onclick="selectSize('2-seater',this)">2-Seater<br><small>R450</small></button>
+      <button class="opt-btn" onclick="selectSize('3-seater',this)">3-Seater<br><small>R550</small></button>
+      <button class="opt-btn" onclick="selectSize('4-seater',this)">4-Seater<br><small>R750</small></button>
+      <button class="opt-btn" onclick="selectSize('5-seater',this)">5-Seater<br><small>R850</small></button>
+      <button class="opt-btn" onclick="selectSize('6-seater',this)">6-Seater<br><small>R950</small></button>
+      <button class="opt-btn" onclick="selectSize('7-seater',this)">7-Seater<br><small>R1,050</small></button>
+      <button class="opt-btn" onclick="selectSize('8-seater',this)">8-Seater<br><small>R1,250</small></button>
     </div>
     <div class="calc-label" style="margin-top:20px">How many couches?</div>
     <div class="qty-control" style="margin-bottom:24px">
@@ -1153,22 +1159,44 @@ function buildStep2() {
       <button class="qty-btn" onclick="adjustQty(1)"><i class="fa-solid fa-plus"></i></button>
     </div>`;
   } else if(s === 'chair') {
-    html = `<div class="calc-label">How many chairs?</div>
+    html = `<div class="calc-label">What type?</div>
+    <div class="options-grid">
+      <button class="opt-btn" onclick="selectSize('Chair',this)">Chair<br><small>R150</small></button>
+      <button class="opt-btn" onclick="selectSize('Small Ottoman',this)">Small Ottoman<br><small>R150</small></button>
+      <button class="opt-btn" onclick="selectSize('Large Ottoman',this)">Large Ottoman<br><small>R200</small></button>
+      <button class="opt-btn" onclick="selectSize('XL Ottoman',this)">XL Ottoman<br><small>R300</small></button>
+    </div>
+    <div class="calc-label" style="margin-top:20px">How many?</div>
     <div class="qty-control" style="margin-bottom:24px">
       <button class="qty-btn" onclick="adjustQty(-1)"><i class="fa-solid fa-minus"></i></button>
       <div class="qty-val" id="qtyDisplay">1</div>
       <button class="qty-btn" onclick="adjustQty(1)"><i class="fa-solid fa-plus"></i></button>
-    </div>
-    <p style="font-size:13px;color:var(--mid)">R100 per dining/accent chair. Office chairs from R120.</p>`;
-    calcState.size = 'single';
-  } else if(s === 'carpet' || s === 'rug') {
-    html = `<div class="calc-label">What size?</div>
+    </div>`;
+  } else if(s === 'carpet') {
+    html = `<div class="calc-label">What size fitted carpet?</div>
     <div class="options-grid">
-      <button class="opt-btn" onclick="selectSize('Small',this)">Small<br><small>Under 2m² — R150</small></button>
-      <button class="opt-btn" onclick="selectSize('Medium',this)">Medium<br><small>2–4m² — R250</small></button>
-      <button class="opt-btn" onclick="selectSize('Large',this)">Large<br><small>Over 4m² — R350</small></button>
+      <button class="opt-btn" onclick="selectSize('Small 3x3',this)">Small (3x3)<br><small>R550</small></button>
+      <button class="opt-btn" onclick="selectSize('Medium 4x4',this)">Medium (4x4)<br><small>R650</small></button>
+      <button class="opt-btn" onclick="selectSize('Large 5x5',this)">Large (5x5)<br><small>R750</small></button>
+      <button class="opt-btn" onclick="selectSize('Extra-Large 6x6',this)">Extra-Large (6x6)<br><small>R850</small></button>
     </div>
-    <div class="calc-label" style="margin-top:20px">How many ${s === 'carpet' ? 'carpets' : 'rugs'}?</div>
+    <p style="font-size:13px;color:var(--mid);margin-top:10px;">Office carpet: R25-R35/m² (Custom Quote)</p>
+    <div class="calc-label" style="margin-top:20px">How many rooms?</div>
+    <div class="qty-control" style="margin-bottom:24px">
+      <button class="qty-btn" onclick="adjustQty(-1)"><i class="fa-solid fa-minus"></i></button>
+      <div class="qty-val" id="qtyDisplay">1</div>
+      <button class="qty-btn" onclick="adjustQty(1)"><i class="fa-solid fa-plus"></i></button>
+    </div>`;
+  } else if(s === 'rug') {
+    html = `<div class="calc-label">What size rug?</div>
+    <div class="options-grid">
+      <button class="opt-btn" onclick="selectSize('Small',this)">Small<br><small>R350</small></button>
+      <button class="opt-btn" onclick="selectSize('Medium',this)">Medium<br><small>R450</small></button>
+      <button class="opt-btn" onclick="selectSize('Large',this)">Large<br><small>R550</small></button>
+      <button class="opt-btn" onclick="selectSize('Extra-Large',this)">Extra-Large<br><small>R650</small></button>
+    </div>
+    <p style="font-size:13px;color:var(--mid);margin-top:10px;"><i class="fa-solid fa-truck"></i> Collection days: Wednesdays | Delivery days: Fridays</p>
+    <div class="calc-label" style="margin-top:20px">How many rugs?</div>
     <div class="qty-control" style="margin-bottom:24px">
       <button class="qty-btn" onclick="adjustQty(-1)"><i class="fa-solid fa-minus"></i></button>
       <div class="qty-val" id="qtyDisplay">1</div>
@@ -1177,10 +1205,10 @@ function buildStep2() {
   } else if(s === 'mattress') {
     html = `<div class="calc-label">What size mattress?</div>
     <div class="options-grid">
-      <button class="opt-btn" onclick="selectSize('Single',this)">Single<br><small>R250</small></button>
-      <button class="opt-btn" onclick="selectSize('Double',this)">Double<br><small>R350</small></button>
-      <button class="opt-btn" onclick="selectSize('Queen',this)">Queen<br><small>R450</small></button>
-      <button class="opt-btn" onclick="selectSize('King',this)">King<br><small>R550</small></button>
+      <button class="opt-btn" onclick="selectSize('Single',this)">Single<br><small>R380</small></button>
+      <button class="opt-btn" onclick="selectSize('Double',this)">Double<br><small>R580</small></button>
+      <button class="opt-btn" onclick="selectSize('Queen',this)">Queen<br><small>R580</small></button>
+      <button class="opt-btn" onclick="selectSize('King',this)">King<br><small>R680</small></button>
     </div>
     <div class="calc-label" style="margin-top:20px">How many mattresses?</div>
     <div class="qty-control" style="margin-bottom:24px">
@@ -1262,14 +1290,20 @@ function buildStep2() {
       <button class="qty-btn" onclick="adjustQty(1)"><i class="fa-solid fa-plus"></i></button>
     </div>`;
   } else if(s === 'shoes') {
-    html = `<div class="calc-label">How many pairs?</div>
+    html = `<div class="calc-label">Type of wash?</div>
+    <div class="options-grid">
+      <button class="opt-btn" onclick="selectSize('Standard',this)">Standard<br><small>R130</small></button>
+      <button class="opt-btn" onclick="selectSize('White Restoration',this)">White Restore<br><small>R150</small></button>
+      <button class="opt-btn" onclick="selectSize('Suede & Nubuck',this)">Suede/Nubuck<br><small>R180</small></button>
+      <button class="opt-btn" onclick="selectSize('Midsole De-Yellowing',this)">Midsole Fix<br><small>R250</small></button>
+    </div>
+    <p style="font-size:13px;color:var(--mid);margin-top:10px;"><i class="fa-solid fa-gift"></i> Free lace cleaning with every pair.</p>
+    <div class="calc-label" style="margin-top:20px">How many pairs?</div>
     <div class="qty-control" style="margin-bottom:16px">
       <button class="qty-btn" onclick="adjustQty(-1)"><i class="fa-solid fa-minus"></i></button>
       <div class="qty-val" id="qtyDisplay">1</div>
       <button class="qty-btn" onclick="adjustQty(1)"><i class="fa-solid fa-plus"></i></button>
-    </div>
-    <p style="font-size:13px;color:var(--mid)">R50 per pair of shoes / sneakers. Pickup & delivery available.</p>`;
-    calcState.size = 'perPair';
+    </div>`;
   } else if(s === 'movein') {
     html = `<div class="calc-label">Number of bedrooms</div>
     <div class="options-grid" style="margin-bottom:20px">
@@ -1371,18 +1405,18 @@ function getBasePrice() {
   if(!p) return 0;
   let base = 0;
   if(s === 'couch') base = (p[calcState.size] || 0) * calcState.qty;
-  else if(s === 'chair') base = 100 * calcState.qty;
-  else if(s === 'carpet' || s === 'rug') base = (p[calcState.size] || 150) * calcState.qty;
-  else if(s === 'mattress') base = (p[calcState.size] || 350) * calcState.qty;
+  else if(s === 'chair') base = (p[calcState.size] || 150) * calcState.qty;
+  else if(s === 'carpet' || s === 'rug') base = (p[calcState.size] || 350) * calcState.qty;
+  else if(s === 'mattress') base = (p[calcState.size] || 380) * calcState.qty;
   else if(s === 'window') base = Math.max(3, calcState.qty) * 50;
   else if(s === 'house') {
-    base = p[Math.min(calcState.bedrooms, 4)] || 400;
+    base = p[Math.min(calcState.bedrooms, 4)] || 1500;
     if(calcState.cleanType === 'deep') base += 300;
     if(calcState.frequency === 'weekly') base = Math.round(base * 0.9);
     if(calcState.frequency === 'monthly') base = Math.round(base * 0.95);
   } else if(s === 'apartment') {
-    const aprices = {1:350, 2:500, 3:700};
-    base = aprices[Math.min(calcState.bedrooms, 3)] || 350;
+    const aprices = {1:1200, 2:1500, 3:1800};
+    base = aprices[Math.min(calcState.bedrooms, 3)] || 1200;
     if(calcState.cleanType === 'deep') base += 200;
   } else if(s === 'office') {
     const opmap = {small:800, medium:1200, large:1800};
@@ -1390,7 +1424,7 @@ function getBasePrice() {
   } else if(s === 'car') {
     base = (PRICING.car[calcState.size] || 400) * calcState.qty;
   } else if(s === 'shoes') {
-    base = 50 * calcState.qty;
+    base = (PRICING.shoes[calcState.size] || 130) * calcState.qty;
   } else if(s === 'movein') {
     const mpmap = {1:600, 2:900, 3:1200, 4:1500};
     base = mpmap[Math.min(calcState.bedrooms, 4)] || 600;
