@@ -548,12 +548,24 @@
   </div>
 </section>
 
+<form id="payfast-form" action="https://sandbox.payfast.co.za/eng/process" method="post" style="display:none;">
+  <input type="hidden" name="merchant_id" value="10000100">
+  <input type="hidden" name="merchant_key" value="46f0cd694581a">
+  
+  <input type="hidden" name="return_url" value="https://yourwebsite.com/thank-you">
+  <input type="hidden" name="cancel_url" value="https://yourwebsite.com/payment-cancelled">
+  <input type="hidden" name="notify_url" value="https://yourbackendapi.com/payfast-webhook">
+  
+  <input type="hidden" name="amount" id="pf_amount" value="">
+  <input type="hidden" name="item_name" id="pf_item_name" value="">
+</form>
+
 <section id="estimator">
   <div class="container">
     <div class="section-header center">
       <div class="section-label">Price Calculator</div>
-      <h2 class="section-title">Get an Instant Estimate</h2>
-      <p class="section-sub">Tell us what you need and we'll give you a ballpark price — no calls needed. You can then send it straight to us on WhatsApp.</p>
+      <h2 class="section-title">Get an Instant Estimate & Pay</h2>
+      <p class="section-sub">Tell us what you need, get your estimate, and secure your booking right now via PayFast.</p>
     </div>
     <div class="calc-wrap">
       <div class="calc-header">
@@ -636,20 +648,18 @@
         </div>
 
         <div class="calc-step" id="step4">
-          <div class="calc-label">Step 4 of 4 — Your Estimate</div>
+          <div class="calc-label">Step 4 of 4 — Your Estimate & Payment</div>
           <div class="calc-title">Here's your price estimate <i class="fa-solid fa-wand-magic-sparkles" style="color:var(--yellow); font-size: 20px;"></i></div>
           <div class="calc-result">
             <div class="result-label">Estimated Total</div>
             <div class="result-price"><span>R</span><span id="totalPrice">0</span></div>
             <div class="result-note">This is an estimate based on the details you've provided. Final pricing confirmed on-site.<br><br><strong style="color:var(--teal);">A 50% deposit is required to secure your booking.</strong></div>
-            <div class="result-breakdown">
-              <div id="breakdownRows"></div>
-            </div>
+            <div class="result-breakdown" id="breakdownRows">
+              </div>
           </div>
-          <div class="calc-btns">
+          <div class="calc-btns" style="justify-content: flex-start; margin-top: 20px;">
             <button class="btn btn-ghost btn-sm" onclick="goStep(3)"><i class="fa-solid fa-arrow-left"></i> Adjust</button>
             <button class="btn btn-outline btn-sm" style="color:var(--dark); border-color:var(--border);" onclick="goStep(1); resetCalc()"><i class="fa-solid fa-rotate-right"></i> Start New</button>
-            <a id="whatsappQuote" href="#" target="_blank" class="btn btn-wa btn-sm"><i class="fa-brands fa-whatsapp"></i> Send to WhatsApp</a>
           </div>
         </div>
       </div>
@@ -1092,7 +1102,7 @@ let calcState = {
   basePrice: 0
 };
 
-// --- PRICING UPDATED HERE ---
+// --- PRICING ---
 const PRICING = {
   couch:    { '1-seater':250, '2-seater':450, '3-seater':550, '4-seater':750, '5-seater':850, '6-seater':950, '7-seater':1050, '8-seater':1250 },
   chair:    { 'Chair': 150, 'Small Ottoman': 150, 'Large Ottoman': 200, 'XL Ottoman': 300 },
@@ -1110,7 +1120,7 @@ const PRICING = {
   postoccupational: { base:700 }
 };
 
-// --- ADDONS UPDATED HERE ---
+// --- ADDONS ---
 const ADDONS = {
   couch: ['Leather conditioning +R80','Fabric protector +R100','Odour treatment +R60'],
   carpet: ['Stain protector +R80', 'Odour treatment +R60'],
@@ -1304,6 +1314,7 @@ function buildStep2() {
       <div class="qty-val" id="qtyDisplay">1</div>
       <button class="qty-btn" onclick="adjustQty(1)"><i class="fa-solid fa-plus"></i></button>
     </div>`;
+    calcState.size = 'perPair';
   } else if(s === 'movein') {
     html = `<div class="calc-label">Number of bedrooms</div>
     <div class="options-grid" style="margin-bottom:20px">
@@ -1453,6 +1464,9 @@ function buildResult() {
   const addons = getAddonTotal();
   const urgency = calcState.urgency || 0;
   const total = base + addons + urgency;
+  
+  // Calculate 50% deposit minimum
+  const minDeposit = Math.ceil(total * 0.5);
 
   document.getElementById('totalPrice').textContent = total > 0 ? total.toLocaleString() : 'TBC';
 
@@ -1464,12 +1478,52 @@ function buildResult() {
   if(urgency > 0) rows += `<div class="rb-row" style="color:var(--coral)"><span><i class="fa-solid fa-bolt"></i> Urgency surcharge</span><span>+R${urgency}</span></div>`;
   rows += `<div class="rb-row total"><span>Estimated Total</span><span>R${total > 0 ? total.toLocaleString() : 'TBC'}</span></div>`;
 
+  // Inject the payment UI slider if total > 0
+  if (total > 0) {
+    rows += `
+      <div style="background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-top: 24px;">
+        <div style="font-size: 14px; font-weight: 700; color: var(--dark); margin-bottom: 12px;">Choose your payment amount:</div>
+        
+        <div style="display: flex; justify-content: space-between; font-size: 13px; color: var(--mid); margin-bottom: 8px;">
+          <span>50% Deposit (R${minDeposit})</span>
+          <span>Full Amount (R${total})</span>
+        </div>
+        
+        <input type="range" id="paymentSlider" min="${minDeposit}" max="${total}" step="10" value="${minDeposit}" 
+               style="width: 100%; margin-bottom: 16px; accent-color: var(--teal);"
+               oninput="document.getElementById('payAmountDisplay').innerText = parseInt(this.value).toLocaleString()">
+        
+        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); padding-top: 16px;">
+          <div style="font-size: 13px; color: var(--mid);">Amount to pay today:</div>
+          <div style="font-size: 24px; font-weight: 700; color: var(--teal);">R<span id="payAmountDisplay">${minDeposit.toLocaleString()}</span></div>
+        </div>
+        
+        <button onclick="initiatePayment()" class="btn btn-primary" style="width: 100%; margin-top: 16px; justify-content: center;">
+          <i class="fa-solid fa-lock"></i> Pay Securely with PayFast
+        </button>
+      </div>
+    `;
+  }
+
   document.getElementById('breakdownRows').innerHTML = rows;
 
   const waMsg = encodeURIComponent(
-    `Hi Smalls Cleaning Services! 👋\n\nI'd like to get a quote for:\n*${calcState.serviceName}*\nEstimated price: R${total.toLocaleString()}\n\nCan you confirm this and help me book a date?`
+    `Hi Smalls Cleaning Services! 👋\n\nI'd like to get a quote for:\n*${calcState.serviceName}*\nEstimated total: R${total.toLocaleString()}\n\nCan you confirm this and help me book a date?`
   );
   document.getElementById('whatsappQuote').href = `https://wa.me/27727782773?text=${waMsg}`;
+}
+
+// ── PAYFAST INTEGRATION ──
+function initiatePayment() {
+  const amountToPay = document.getElementById('paymentSlider').value;
+  const serviceName = calcState.serviceName;
+  
+  // Set the values in the hidden form
+  document.getElementById('pf_amount').value = amountToPay;
+  document.getElementById('pf_item_name').value = "Smalls Cleaning: " + serviceName;
+  
+  // Submit the form which redirects the user to PayFast
+  document.getElementById('payfast-form').submit();
 }
 
 function goStep(n) {
