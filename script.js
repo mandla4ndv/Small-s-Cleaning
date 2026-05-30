@@ -445,7 +445,8 @@ function initiateEmailQuote() {
   bodyText += `\nEstimated Total: R${total > 0 ? total.toLocaleString() : 'TBC'}\n\n`;
   bodyText += `Please let me know the next steps to confirm the final price and secure the booking.\n\n(Note: I have attached images of the items/space if needed.)\n\nKind regards,`;
 
-  const body = encodeURIComponent(bodyText);
+  const formattedBody = bodyText.replace(/\n/g, '\r\n');
+  const body = encodeURIComponent(formattedBody);
   window.location.href = `mailto:smallscleaningservices74@gmail.com?subject=${subject}&body=${body}`;
 }
 
@@ -518,7 +519,8 @@ function submitBooking() {
   bodyText += `Notes/Extras: ${notes || 'None'}\n\n`;
   bodyText += `Please reply to confirm my time slot and provide details for the 50% deposit.\n\n(Note: I have attached images of the items/space if needed.)\n\nKind regards,\n${name}`;
 
-  const body = encodeURIComponent(bodyText);
+  const formattedBody = bodyText.replace(/\n/g, '\r\n');
+  const body = encodeURIComponent(formattedBody);
 
   // Use a slight timeout to let the user see the UI message before the browser opens the mail client
   setTimeout(() => {
