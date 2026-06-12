@@ -427,8 +427,9 @@
       <p class="section-sub">Real results from real jobs. We take pride in every clean — here's a look at what we do.</p>
     </div>
     <div class="gallery-grid">
-      <div class="gallery-item tall">
-        <div class="gallery-thumb" style="background-image: url('assets/images/coach_deep.jpeg');">
+      <!-- Added onclick function for dynamic gallery modal -->
+      <div class="gallery-item tall" onclick="openGalleryModal('couch')">
+        <div class="gallery-thumb" style="background-image: url('assets/images/Couch 1.jpeg');">
           <div class="gallery-overlay-grad"></div>
           <div class="gallery-content">
             <div class="gallery-icon"><i class="fa-solid fa-couch"></i></div>
@@ -436,57 +437,66 @@
           </div>
         </div>
       </div>
-      <div class="gallery-item">
-        <div class="gallery-thumb" style="background-image: url('assets/images/carpet.jpeg');">
+      <div class="gallery-item wide" onclick="openGalleryModal('commercial')">
+        <div class="gallery-thumb" style="background-image: url('assets/images/Commertial 1.jpeg');">
           <div class="gallery-overlay-grad"></div>
           <div class="gallery-content">
-            <div class="gallery-icon"><i class="fa-solid fa-rug"></i></div>
-            <div class="gallery-lbl">Carpet Extraction</div>
+            <div class="gallery-icon"><i class="fa-solid fa-store"></i></div>
+            <div class="gallery-lbl">Commercial Exterior</div>
           </div>
         </div>
       </div>
-      <div class="gallery-item">
+      <div class="gallery-item" onclick="openGalleryModal('solar')">
+        <div class="gallery-thumb" style="background-image: url('assets/images/Solar 1.jpeg');">
+          <div class="gallery-overlay-grad"></div>
+          <div class="gallery-content">
+            <div class="gallery-icon"><i class="fa-solid fa-solar-panel"></i></div>
+            <div class="gallery-lbl">Solar Panel Cleaning</div>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item" onclick="openGalleryModal('carpet')">
+        <div class="gallery-thumb" style="background-image: url('assets/images/Carpet 1.jpeg');">
+          <div class="gallery-overlay-grad"></div>
+          <div class="gallery-content">
+            <div class="gallery-icon"><i class="fa-solid fa-rug"></i></div>
+            <div class="gallery-lbl">Carpet Deep Cleaning</div>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item" onclick="openGalleryModal('house')">
         <div class="gallery-thumb" style="background-image: url('assets/images/houseclean.jpeg');">
           <div class="gallery-overlay-grad"></div>
           <div class="gallery-content">
             <div class="gallery-icon"><i class="fa-solid fa-house"></i></div>
-            <div class="gallery-lbl">House Clean</div>
+            <div class="gallery-lbl">House Cleaning</div>
           </div>
         </div>
       </div>
-      <div class="gallery-item wide">
-        <div class="gallery-thumb" style="background-image: url('assets/images/carcleaning.jpeg');">
+      <div class="gallery-item wide" onclick="openGalleryModal('car')">
+        <div class="gallery-thumb" style="background-image: url('assets/images/Car Exterior 1.jpeg');">
           <div class="gallery-overlay-grad"></div>
           <div class="gallery-content">
             <div class="gallery-icon"><i class="fa-solid fa-car"></i></div>
-            <div class="gallery-lbl">Car Interior </div>
+            <div class="gallery-lbl">Car Interior and exterior</div>
           </div>
         </div>
       </div>
-      <div class="gallery-item">
+      <div class="gallery-item" onclick="openGalleryModal('mattress')">
         <div class="gallery-thumb" style="background-image: url('assets/images/bedcleaning.jpeg');">
           <div class="gallery-overlay-grad"></div>
           <div class="gallery-content">
             <div class="gallery-icon"><i class="fa-solid fa-bed"></i></div>
-            <div class="gallery-lbl">Mattress Sanitising</div>
+            <div class="gallery-lbl">Mattress Deep Cleaning</div>
           </div>
         </div>
       </div>
-      <div class="gallery-item">
-        <div class="gallery-thumb" style="background-image: url('assets/images/officeclean.jpeg');">
+      <div class="gallery-item" onclick="openGalleryModal('chairs')">
+        <div class="gallery-thumb" style="background-image: url('assets/images/Chair 1.jpeg');">
           <div class="gallery-overlay-grad"></div>
           <div class="gallery-content">
-            <div class="gallery-icon"><i class="fa-solid fa-building"></i></div>
-            <div class="gallery-lbl">Office Clean</div>
-          </div>
-        </div>
-      </div>
-      <div class="gallery-item">
-        <div class="gallery-thumb" style="background-image: url('https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=600&q=80'); background-position: bottom;">
-          <div class="gallery-overlay-grad"></div>
-          <div class="gallery-content">
-            <div class="gallery-icon"><i class="fa-solid fa-shoe-prints"></i></div>
-            <div class="gallery-lbl">Shoe Washing</div>
+            <div class="gallery-icon"><i class="fa-solid fa-chair"></i></div>
+            <div class="gallery-lbl">Dining Chairs Cleaning</div>
           </div>
         </div>
       </div>
@@ -494,6 +504,15 @@
     <p style="text-align:center;margin-top:32px;font-size:15px;color:var(--mid);"><i class="fa-brands fa-instagram"></i> Follow us for more before & after photos on our social media.</p>
   </div>
 </section>
+
+<!-- Gallery Modal Structure -->
+<div id="galleryModal" class="gallery-modal">
+  <span class="gallery-close" onclick="closeGalleryModal()">&times;</span>
+  <img class="gallery-modal-content" id="galleryModalImg">
+  <a class="gallery-prev" onclick="changeModalImage(-1)">&#10094;</a>
+  <a class="gallery-next" onclick="changeModalImage(1)">&#10095;</a>
+  <div id="galleryCaption" class="gallery-caption"></div>
+</div>
 
 <section id="reviews">
   <div class="container">
@@ -591,6 +610,7 @@
             <div>
               <div class="cc-label">Phone</div>
               <div class="cc-value">
+                <a href="tel:+27151101342">015 110 1342</a><br>
                 <a href="tel:+27727782773">072 778 2773</a><br>
                 <a href="tel:+27754534417">075 453 4417</a>
               </div>
@@ -607,7 +627,7 @@
             <div class="cc-icon" style="background:#fff3e0; color: #f57c00;"><i class="fa-solid fa-envelope"></i></div>
             <div>
               <div class="cc-label">Email</div>
-              <div class="cc-value"><a href="mailto:smallscleaningservices74@gmail.com">smallscleaningservices74@gmail.com</a></div>
+              <div class="cc-value"><a href="mailto:Info@smallscleaningservices.co.za">Info@smallscleaningservices.co.za</a></div>
             </div>
           </div>
           <div class="contact-card">
@@ -668,11 +688,11 @@
       <div class="footer-col">
         <h4>Contact</h4>
         <ul>
+          <li><a href="tel:+27151101342"><i class="fa-solid fa-phone"></i> 015 110 1342</a></li>
           <li><a href="tel:+27727782773"><i class="fa-solid fa-phone"></i> 072 778 2773</a></li>
-          <li><a href="tel:+27754534417"><i class="fa-solid fa-phone"></i> 075 453 4417</a></li>
-          <li><a href="mailto:smallscleaningservices74@gmail.com"><i class="fa-solid fa-envelope"></i> Email Us</a></li>
+          <li><a href="mailto:Info@smallscleaningservices.co.za"><i class="fa-solid fa-envelope"></i> Email Us</a></li>
           <li><a href="https://wa.me/27727782773" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a></li>
-          <li><a href="https://maps.app.goo.gl/CcKgzcNmWUu68n4w7" target="_blank><i class="fa-solid fa-location-dot"></i> 74A Bok Street, Polokwane</a></li>
+          <li><a href="https://maps.app.goo.gl/CcKgzcNmWUu68n4w7" target="_blank"><i class="fa-solid fa-location-dot"></i> 74A Bok Street, Polokwane</a></li>
         </ul>
       </div>
     </div>
@@ -707,5 +727,6 @@
 </div>
 
 <script src="script.js"></script>
+<script src="animations.js"></script>
 </body>
 </html>
